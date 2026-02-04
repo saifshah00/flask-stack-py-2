@@ -25,7 +25,8 @@ def hello_copycat():
 
 @app.route("/api/jobs")
 def list_jobs():
-    return jsonify(jobs)
+    jobs_list = load_jobs_from_db()
+    return jsonify(jobs_list)
 
 
 if __name__ == "__main__":
